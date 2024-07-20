@@ -26,7 +26,7 @@ make
 
 # Download bootloader files 
 
-[](https://github.com/raspberrypi/firmware)
+[github/raspberrypi](https://github.com/raspberrypi/firmware)
 - /boot/fixup.dat
 - /boot/start.elf
 - /boot/bootcode.bin
