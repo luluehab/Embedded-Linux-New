@@ -69,4 +69,22 @@ mkdir rootfs
 $ sudo mount /dev/loop18p1 ~/boot
 $ sudo mount /dev/loop18p2 ~/rootfs
 ```
+## script to mount sd after login 
 
+```sh 
+var=$(losetup -f --show --partscan /home/lulu/Desktop/SD_CARD/lulu.img)
+sudo mount ${var}p1 /media/lulu/boot
+sudo mount ${var}p2 /media/lulu/rootfs
+```
+- move it to /usr/bin to run it from anywhere 
+```sh 
+sudo mv script.sh /usr/bin
+```
+- make function in .bashrc For ease of use
+```sh 
+#mount sd card
+MOUNTSD(){
+        sudo bash SDscript.sh
+}
+
+```
