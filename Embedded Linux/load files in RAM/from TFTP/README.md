@@ -83,9 +83,11 @@ in /srv/tftp, should
  bootz $kernel_addr_r - $fdt_addr_r
  ```
  ![alt text](image-13.png)
-starting kernel... 
-kernel panic
 
+```sh 
+zimage: Bad magic!
+```
+- Incorrect Kernel Format
+    - kernel image we are using is not appropriate for the architecture you are emulating in QEMU
 
-
-###### Please hang tight! We'll be back shortly to explain everything.
+## Please hang tight! We'll be back shortly to explain everything.
