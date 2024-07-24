@@ -10,10 +10,8 @@ sudo apt-get install qemu-system-arm bridge-utils
 ```sh 
 #!/bin/bash
 
-TAP_IF="tap0"
+TAP_IF=$1
 
-ip link delete $TAP_IF 2>/dev/null
-ip tuntap add dev $TAP_IF mode tap
 sudo ip addr add 192.168.100.1/24 dev $TAP_IF
 sudo ip link set $TAP_IF
                 
@@ -27,7 +25,7 @@ chmod +x myscript
 4. Run the script:
 
 ```sh 
-sudo ./setup_tap.sh
+sudo ./setup_tap.sh tap0
 ```
 
 5. Make sure that the TAP interface is correctly configured and running on your host machine.
