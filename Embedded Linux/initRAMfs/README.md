@@ -13,11 +13,12 @@ sudo cp -rp /media/lulu/rootfs/* QEMU/initRamfs/
 ![alt text](image.png)
 
 3. make sure root is the owner
-![alt text](image-1.png)
 - to change owner 
 ```sh
  sudo chown -R root:root *
 ```
+![alt text](image-1.png)
+
 4. create cpio archive 
 ```sh 
 find . | cpio -H newc -ov --owner root:root > ../initramfs.cpio
