@@ -40,7 +40,8 @@ gzip initramfs.cpio
 
 7. Run QEMU
 ```sh
-sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel u-boot -sd ../SD_CARD/lulu.img -net nic -net tap,script=./bash.sh 
+sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel u-boot -sd ../SD_CARD/lulu.img 
+
 ```
 
 8. set environments 
