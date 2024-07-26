@@ -37,14 +37,19 @@ gzip initramfs.cpio
  mkimage -A arm -O linux -T ramdisk -d initramfs.cpio.gz myRAMfs
 ```
 ![alt text](image-4.png)
+7. copy image into boot partition of virtual SD card
+```sh 
+ sudo cp myRAMfs /media/lulu/boot/
 
-7. Run QEMU
+```
+
+8. Run QEMU
 ```sh
 sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel u-boot -sd ../SD_CARD/lulu.img 
 
 ```
 
-8. set environments 
+9. set environments 
 ```sh
 setenv initRamfs_addr 0x60700000
 fatload mmc 0:1 $kernel_addr_r zImage
@@ -53,7 +58,7 @@ fatload mmc 0:1 $initRamfs_addr myRAMfs
 setenv bootargs console=ttyAMA0 rdinit=/bin/sh
 
 saveenv
-bootz $kernel_addr_r $initramfs $fdt_addr_r
+bootz $kernel_addr_r $initRamfs_addr $fdt_addr_r
 ```
 ![alt text](image-5.png)
 ![alt text](image-6.png)
