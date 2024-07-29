@@ -2,8 +2,7 @@
 
 1. prerequire Libraries
 ```sh 
-sudo apt install sed make binutils gcc g++ bash patch \
-gzip bzip2 perl tar cpio python unzip rsync wget libncurses-dev
+sudo apt install sed make binutils gcc g++ bash patch gzip bzip2 perl tar cpio python unzip rsync wget libncurses-dev
 ```
 
 2. clone BuildRoot
