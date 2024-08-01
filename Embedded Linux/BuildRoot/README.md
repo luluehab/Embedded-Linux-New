@@ -57,3 +57,13 @@ make 2>&1 | tee build.log
 ![alt text](image-8.png)
 
 #### "Don't just sit there, have a blast and don't wait for the build" 
+![alt text](image-9.png)
+
+# to Run QEMU 
+```sh 
+cd output/images
+./start-qemu.sh 
+```
+
+![alt text](image-10.png)
+![alt text](image-11.png)
