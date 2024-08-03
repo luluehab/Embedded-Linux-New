@@ -44,6 +44,7 @@ exit 0
 ```sh 
 cd /bin
 touch luluApp
+```
 ```sh 
 #app
 #!/bin/sh
