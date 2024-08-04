@@ -128,3 +128,21 @@ sudo rmmod hello
 dmesg
 ```
 ![alt text](image-5.png)
+
+## Error Solving 
+Executing with insmod:
+```sh 
+insmod: ERROR: could not insert module lkm_example.ko: Invalid module format
+```
+and The dmesg log gives the following error:
+```sh 
+[   49.272618] lkm_example: module verification failed: signature and/or required key missing - tainting kernel
+[   49.272630] module: x86/modules: Skipping invalid relocation target, existing value is nonzero for type 1, loc 0000000054f3f1c5, val ffffffffc0a0a000
+```
+```sh 
+sudo apt update && sudo apt upgrade
+sudo apt remove --purge linux-headers-*
+sudo apt autoremove && sudo apt autoclean
+sudo apt install linux-headers-generic
+sudo apt install linux-headers-$(uname -r)
+```
