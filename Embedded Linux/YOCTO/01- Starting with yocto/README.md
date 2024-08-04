@@ -9,7 +9,7 @@ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib buil
 
 ## git Yocto repo 
 ```sh
-git clone -b dunfell https://git.yoctoproject.org/git/poky.git
+git clone -b kirkstone https://git.yoctoproject.org/git/poky.git
 ```
 ## setup environment 
 ```sh
