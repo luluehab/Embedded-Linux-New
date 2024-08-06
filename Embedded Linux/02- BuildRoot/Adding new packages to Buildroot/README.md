@@ -100,10 +100,10 @@ printf("Hello lulu from your package\r\n");
 .PHONY: LULU
 
 LULU: lulu.c
-    $(CC) -o '$@' '$<'
-
+	$(CC) -g -Wall $(CFLAGS) $(LDFLAGS) $< -o $@
 clean:
-    -rm LULU
+	-rm LULU
+
 ```
 ![alt text](image-2.png)
 
