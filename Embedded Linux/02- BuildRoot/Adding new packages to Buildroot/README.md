@@ -134,3 +134,23 @@ cd output/images
 ![alt text](image-7.png)
 
 ###### [Reference](https://buildroot.org/downloads/manual/manual.html#adding-packages)
+
+##### Error Solving 
+```sh 
+make -j6
+```
+```sh
+>>> LULU 1.0 Building
+/usr/bin/make  CC="/home/lulu/QEMU/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-gcc" LD="/home/lulu/QEMU/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-ld" -C /home/lulu/QEMU/buildroot/output/build/LULU-1.0
+Makefile:2: *** missing separator.  Stop.
+make[1]: *** [package/pkg-generic.mk:289: /home/lulu/QEMU/buildroot/output/build/LULU-1.0/.stamp_built] Error 2
+make: *** [Makefile:83: _all] Error 2
+
+```
+
+- Check spaces and Taps in /home/lulu/QEMU/buildroot/output/build/<your package>-<version>/Makefile
+```sh 
+vim home/lulu/QEMU/buildroot/output/build/LULU-1.0/Makefile
+```
+- edit file 
+- build again 
