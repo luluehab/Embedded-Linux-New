@@ -54,10 +54,13 @@ sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel u-boot -sd ../SD_
 setenv initRamfs_addr 0x60700000
 fatload mmc 0:1 $kernel_addr_r zImage
 fatload mmc 0:1 $fdt_addr_r vexpress-v2p-ca9.dtb
-fatload mmc 0:1 $initRamfs_addr myRAMfs
+fatload mmc 0:1 $initRamfs_addr myinitRAMfs
 setenv bootargs console=ttyAMA0 rdinit=/bin/sh
 
-saveenv
+
+
+```
+```sh
 bootz $kernel_addr_r $initRamfs_addr $fdt_addr_r
 ```
 ![alt text](image-5.png)

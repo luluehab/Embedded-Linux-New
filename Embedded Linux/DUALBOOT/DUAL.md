@@ -39,7 +39,6 @@ setenv bootargs 'console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 rw r
 fatload mmc 0:1 ${kernel_addr_r} zImage
 fatload mmc 0:1 ${fdt_addr_r} vexpress-v2p-ca9.dtb
 saveenv
-bootz $kernel_addr_r - $fdt_addr_r
 ```
 ![alt text](image-4.png)
 ![alt text](image-5.png)

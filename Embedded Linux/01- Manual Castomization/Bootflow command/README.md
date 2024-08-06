@@ -52,4 +52,48 @@ reset
 
 - Kernel panic
 
-## Please hang tight! We'll be back shortly to explain everything.
+### Please hang tight! We'll be back shortly to explain everything.
+
+# load files by TFTP 
+1. move files into tftp server
+our SD card 
+![alt text](image-7.png)
+![alt text](image-8.png)
+
+2. edit extlinux.conf
+
+```sh 
+LABEL luluextconf
+    KERNEL tftp://your_tftp_server_address/path to zImage
+    FDT tftp://your_tftp_server_address/path to file.dtb
+```
+```sh 
+
+LABEL luluextconf
+    KERNEL tftp://192.168.100.1/zImage
+    FDT tftp://192.168.100.1/vexpress-v2p-ca9.dtb
+```
+2. check service dev
+![alt text](image-5.png)
+![alt text](image-6.png)
+
+3. run Qemu with Network
+```sh
+sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel u-boot -sd ~/Desktop/SD_CARD/lulu.img -net nic -net tap,ifname=tap0,script=no
+```
+```sh 
+sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel u-boot -drive file=~/Desktop/SD_CARD/lulu.img,format=raw -netdev user,id=n0,tftp=/srv/tftp -device virtio-net-device,netdev=n0
+```
+
+4. set envuronment
+
+```sh 
+setenv ipaddr 192.168.100.2
+#check conniction
+ping 192.168.100.1
+setenv serverip 192.168.100.1
+setenv bootcmd bootflow scan
+saveenv
+reset
+```
+![alt text](image-9.png)
