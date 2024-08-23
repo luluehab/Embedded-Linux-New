@@ -5,6 +5,7 @@
 git clone -b kirkstone https://github.com/agherzan/meta-raspberrypi.git
 ```
 ![alt text](image-1.png)
+
 2. get meta-python (if you use python scripts)
 ```sh
 
@@ -79,7 +80,8 @@ do_install() {
 }
 ```
 - add the script 
-if ping host successfully turn on red led else turn on green led (you can wite it in python)
+
+###### if ping host successfully turn on red led else turn on green led (you can wite it in python)
 ```sh
 #!/bin/bash
 
@@ -157,12 +159,11 @@ MACHINE ??= "raspberrypi3-64"
 # edit distro 
 DISTRO ?= "lulu-distro"
 
-# add this part to your local.conf
+# add this part 
 BB_NUMBER_THREADS ?= "6" 
 PARALLEL_MAKE ?= "-j 6" 
 
 
-# Source fetching section
 IMAGE_INSTALL += " strace "
 IMAGE_FSTYPES = "tar.bz2 ext4 rpi-sdimg wic"
 IMAGE_INSTALL:append = " python3 apt bash git python3-pip"
