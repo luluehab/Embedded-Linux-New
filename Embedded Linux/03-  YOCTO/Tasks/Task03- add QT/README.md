@@ -17,14 +17,6 @@ bitbake-layers add-layer <pathh of layer>
 ```
 ![alt text](image-1.png)
 
-3. add nedded layers 
-```sh 
-bitbake-layers add-layer /meta-openembedded meta-multimedia 
-bitbake-layers add-layer /meta-openembedded/meta-multimedia
-bitbake-layers add-layer /meta-openembedded/meta-gnome 
-```
-
-![alt text](image-3.png)
 
 3. update our distro
 
